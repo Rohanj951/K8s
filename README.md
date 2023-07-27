@@ -6,9 +6,8 @@ A compatible Linux host. The Kubernetes project provides generic instructions fo
 
 # Imp: In a Kubernetes cluster, while Ubuntu 20.04 is generally considered stable, users might encounter certain issues with container restarts when using Ubuntu 22.04. Also can face the below issue during the time of installation:
 
-"error execution phase addon/kube-proxy: error when creating kube-proxy service account: unable to create serviceaccount: client rate limiter Wait returned an error: context deadline exceeded
-To see the stack trace of this error execute with --v=5 or higher
-"
+**error execution phase addon/kube-proxy: error when creating kube-proxy service account: unable to create serviceaccount: client rate limiter Wait returned an error: context deadline exceeded
+To see the stack trace of this error execute with --v=5 or higher**
 
 # Prerequisites:
 
@@ -50,13 +49,14 @@ EOF
 sudo sysctl --system
 ~~~
 
-# Verify that the br_netfilter, overlay modules are loaded by running the following commands:
+**Verify that the br_netfilter, overlay modules are loaded by running the following commands**
 
 ~~~
 lsmod | grep br_netfilter
 lsmod | grep overlay
 ~~~
-# Verify that the net.bridge.bridge-nf-call-iptables, net.bridge.bridge-nf-call-ip6tables, and net.ipv4.ip_forward system variables are set to 1 in your sysctl config by running the following command:
+
+**Verify that the net.bridge.bridge-nf-call-iptables, net.bridge.bridge-nf-call-ip6tables, and net.ipv4.ip_forward system variables are set to 1 in your sysctl config by running the following command:**
 ~~~
 sysctl net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables net.ipv4.ip_forward
 ~~~
@@ -66,7 +66,7 @@ sysctl net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables ne
 Ref: "https://docs.docker.com/engine/install/ubuntu/"
      "https://kubernetes.io/docs/setup/production-environment/container-runtimes/"
 
-# Set up the repository
+**Set up the repository**
 
  i)  Update the apt package index and install packages to allow apt to use a repository over HTTPS:
 ~~~
