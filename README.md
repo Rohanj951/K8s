@@ -25,6 +25,7 @@ v)   Certain ports are open on your machines. See the link for more details.
 vi)  Swap disabled. You MUST disable swap in order for the kubelet to work properly.
      For example, sudo swapoff -a will disable swapping temporarily. To make this change persistent across reboots, make sure swap is disabled in config files like /etc/fstab, systemd. swap, depending on how it was configured on your system.
 
+# ON MASTER & WORKER NODES
 # 1. Forwarding IPv4 and letting iptables see bridged traffic
 
 Ref: "[https://kubernetes.io/docs/setup/production-environment/container-runtimes](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#forwarding-ipv4-and-letting-iptables-see-bridged-traffic)/"
@@ -142,6 +143,7 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 ~~~
 
+# NOTE: Perform the below steps till 7 on Master Node Only
 # 5. Initializing your control-plane node 
   Ref: "https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#initializing-your-control-plane-node"
   
